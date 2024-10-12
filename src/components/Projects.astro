@@ -7,8 +7,8 @@ import nest from '../assets/nest.jpg'
 
 const projects = [
   {
-    name: "E-ecommerce app",
-    desc: "This app was developed as a university project together with two friends. It is an app that allows you to make purchases using PayPal as a payment gateway",
+    name: "Ecommerce app",
+    desc: "This app was developed as a university project together with two friends. It is an app that allows you to make purchases using PayPal as a payment gateway.",
     urlImg: Ecommerce,
     skills: ["react", "tailwind", "express", "mysql"],
     github: "https://github.com/luisangelf11/glowish_pedidos_app",
@@ -16,7 +16,7 @@ const projects = [
   },
   {
     name: "What is the country",
-    desc: "It is a quiz app to learn the flags of each country",
+    desc: "It is a quiz app to learn the flags of each country.",
     urlImg: witc,
     skills: ["react"],
     github: "https://github.com/luisangelf11/what-is-the-country",
@@ -28,11 +28,11 @@ const projects = [
     urlImg: notas,
     skills: ["react", "tailwind", "express", "prisma"],
     github: "https://github.com/luisangelf11/js-dev4ever",
-    preview: "",
+    preview: "https://youtube.com/playlist?list=PL65l-wzLB2dedgjoGOG9ABcQCDXuJTySC&si=aeBKdT-OPBAR9XeQ",
   },
   {
     name: "Tasks Manager API",
-    desc: "This is a Rest API developed with nest, it handles user authentication and allows performing all crud operations for the logged-in user",
+    desc: "This is a Rest API developed with nest, it handles user authentication and allows performing all crud operations for the logged-in user.",
     urlImg: nest,
     skills: ["nest js", "prisma"],
     github: "https://github.com/luisangelf11/task-manager-api",
@@ -80,7 +80,7 @@ const projects = [
           <div class="w-auto flex gap-2">
             <a
               href={el.github}
-              class="flex justify-center items-center text-white gap-2 border rounded-lg p-2 text-xs"
+              class="flex justify-center items-center text-white gap-2 border rounded-lg p-2 text-xs transition-all hover:text-yellow-400 hover:border-blue-400 hover:bg-slate-800"
             >
               <svg
                 viewBox="0 0 256 250"
@@ -97,7 +97,7 @@ const projects = [
             {el.preview !== "" && (
               <a
                 href={el.preview}
-                class="flex justify-center items-center text-white gap-2 border rounded-lg p-2 text-xs"
+                class="flex justify-center items-center text-white gap-2 border rounded-lg p-2 text-xs transition-all hover:text-yellow-400 hover:border-blue-400 hover:bg-slate-800"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
