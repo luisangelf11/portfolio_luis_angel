@@ -1,16 +1,61 @@
 ---
-import Me from '../assets/profile.jpeg'
-import Image from 'astro/components/Image.astro'
+import Me from "../assets/profile.jpeg";
+import Image from "astro/components/Image.astro";
 ---
 
-<article class="w-auto flex flex-col justify-center items-center gap-4" id="about">
-    <div class="flex gap-2 justify-center items-center w-[450px]">
-        <Image src={Me} alt="Luis_Angel" class:list={'w-[80px] h-[80px] rounded-full object-cover ml-6'}></Image>
-        <p class="p-2 text-xs border border-blue-400 rounded-3xl text-yellow-300 bg-gray-800">JavaScript Dev4Ever</p>
-    </div>
-    <div class="w-[305px] sm:w-[450px] flex flex-col text-white justify-center items-center">
-        <h1 class="text-2xl uppercase font-extrabold">Hello, I'm Angel!</h1>
-        <h2 class="text-md text-yellow-300 font-semibold">Welcome to my portfolio!</h3>
-        <p class="text-sm text-justify p-2">I am a developer working with the JavaScript ecosystem, primarily focused on frontend development. As a student from the Dominican Republic, I am passionate about building modern web applications and continuously expanding my skills in the ever-evolving field of web technologies.</p>
-    </div>
+<article class="w-auto flex flex-col justify-center items-center gap-4">
+  <div class="flex gap-2 justify-center items-center w-[450px]">
+    <Image
+      src={Me}
+      alt="Luis_Angel"
+      class:list={"w-[80px] h-[80px] rounded-full object-cover ml-6"}
+    />
+    <p
+      class="p-2 text-xs border border-blue-400 rounded-3xl text-yellow-300 bg-gray-800"
+    >
+      JavaScript Dev4Ever
+    </p>
+  </div>
+  <div
+    class="w-[305px] sm:w-[450px] flex flex-col text-white justify-center items-center"
+  >
+    <h1 class="text-2xl uppercase font-extrabold typing-text">Hello, I'm Angel!</h1>
+    <h2 class="text-md text-yellow-300 font-semibold">
+      Welcome to my portfolio!
+    </h2>
+    <p class="text-sm text-justify p-2">
+      I am a developer working with the JavaScript ecosystem, primarily focused
+      on frontend development. As a student from the Dominican Republic, I am
+      passionate about building modern web applications and continuously
+      expanding my skills in the ever-evolving field of web technologies.
+    </p>
+  </div>
 </article>
+
+<style>
+  .typing-text {
+      border-right: 2px solid;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(16) forwards infinite, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 16ch; /* 14 characters in "Hello, I'm Angel!" */
+      }
+    }
+
+    @keyframes blink {
+      from {
+        border-right-color: rgb(255, 255, 255);
+      }
+      to {
+        border-right-color: transparent;
+      }
+    }
+</style>
