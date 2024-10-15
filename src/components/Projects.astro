@@ -53,7 +53,7 @@ const projects = [
 
 <article id="projects" class="flex flex-col gap-4 justify-center items-center">
   <h2
-    class="text-2xl font-extrabold text-white uppercase flex justify-center items-center gap-3"
+    class="text-2xl font-extrabold text-white uppercase flex justify-center items-center gap-3 reveal"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@ const projects = [
   </h2>
   {
     projects.map((el) => (
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 border-b p-3">
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 p-3 reveal">
         <Image
           src={el.urlImg}
           alt={el.name}

@@ -21,6 +21,22 @@ const { title } = Astro.props;
   </body>
 </html>
 
+<script>
+  import ScrollReveal from "scrollreveal";
+
+if (typeof window !== "undefined") {
+  const sr = ScrollReveal();
+
+  sr.reveal(".reveal", {
+    duration: 800,
+    distance: "50px",
+    easing: "ease-in-out",
+    origin: "bottom",
+    reset: true,
+  });
+}
+</script>
+
 <style>
   .myColor {
     background-color: #111427;
@@ -28,5 +44,11 @@ const { title } = Astro.props;
 
   * {
     scroll-behavior: smooth;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all .5s ease-in-out;
   }
 </style>

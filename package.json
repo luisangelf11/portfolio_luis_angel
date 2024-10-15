@@ -12,10 +12,12 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.2",
-    "@types/aos": "^3.0.7",
-    "aos": "^2.3.4",
     "astro": "^4.16.1",
+    "scrollreveal": "^4.0.9",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/scrollreveal": "^0.0.11"
   }
 }
