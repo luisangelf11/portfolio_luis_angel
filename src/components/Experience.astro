@@ -1,40 +1,66 @@
 ---
- const jobs = [{
-    title: ' Digital creator',
-    business: 'YouTube',
-    years: 'now',
-    desc: 'I create programming content, specifically web development, where I teach technologies of the javascript ecosystem.'
- }, {
-    title: 'Software Developer',
-    business: 'Glowish Fashion',
-    years: 'now',
-    desc: 'I am working as a freelance developer for a clothing store called glowish fashion, developing an inventory system and product catalog.'
- },
- {
-    title: 'Tutor on udemy',
-    business: 'Udemy',
-    years: 'now',
-    desc: 'I teach javascript from scratch with my course ¨JavaScript Ninja¨ on this platform.'
- },
- ]
+const jobs = [
+  {
+    title: "Mobile Developer",
+    business: "UTECO (Universidad Tecnologíca del Cibao Oriental)",
+    from: "JAN 2025",
+    to: "now",
+    desc: "Responsible for the design, development, and maintenance of mobile applications for the university, improving student and faculty access to institutional resources.",
+  },
+  {
+    title: "Digital Creator",
+    business: "YouTube",
+    from: "2022",
+    to: "now",
+    desc: "As a content creator on YouTube, I produce educational videos on web development, focusing on the JavaScript ecosystem to teach modern technologies and best practices.",
+  },
+  {
+    title: "Software Developer",
+    business: "Freelance",
+    from: "2024",
+    to: "now",
+    desc: "Delivering custom software solutions for various clients, managing projects from conception to deployment and ensuring high-quality, scalable code.",
+  },
+  {
+    title: "Tutor on Udemy",
+    business: "Udemy",
+    from: "2024",
+    to: "now",
+    desc: "Author and instructor of the 'JavaScript Ninja' course, guiding students from basic concepts to advanced topics through practical and engaging lessons.",
+  },
+];
 ---
-<article class="w-auto flex justify-center items-center flex-col mt-2 " id="experience">
-    <h2 class="text-2xl font-extrabold text-white uppercase flex justify-center items-center gap-3 reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-            <path fill-rule="evenodd" d="M7.5 5.25a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0 1 12 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 0 1 7.5 5.455V5.25Zm7.5 0v.09a49.488 49.488 0 0 0-6 0v-.09a1.5 1.5 0 0 1 1.5-1.5h3a1.5 1.5 0 0 1 1.5 1.5Zm-3 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
-            <path d="M3 18.4v-2.796a4.3 4.3 0 0 0 .713.31A26.226 26.226 0 0 0 12 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 0 1-6.477-.427C4.047 21.128 3 19.852 3 18.4Z" />
-          </svg>
-      <span>Experience</span></h2>
-      <div class="flex gap-4 justify-center items-center flex-col mt-2">
-        {jobs.map(el=> <div class="flex justify-center items-center gap-3 reveal">
-            <div class="w-[150px]">
-            <h2 class="text-xl uppercase text-yellow-300 font-bold">{el.title}</h2>
-            <h3 class="text-md uppercase font-semibold text-blue-400">{el.business}</h3>
-            <span class="text-xs uppercase font-bold text-slate-400">{el.years}</span>
+
+<article
+  class="reveal mx-auto w-[90%] max-w-4xl rounded-xl border border-white/10 bg-gray-900/50 p-6 text-white backdrop-blur-sm md:p-8"
+  id="experience"
+>
+  <h2
+    class="mb-12 flex items-center justify-center gap-3 text-2xl font-extrabold uppercase text-white"
+  >
+    <span>Experience</span>
+  </h2>
+  <div class="relative border-l-2 border-blue-400/30">
+    {
+      jobs.map((el) => (
+        <div class="reveal mb-10 ml-6">
+          <span class="absolute -left-[9px] flex h-4 w-4 items-center justify-center rounded-full bg-blue-400 ring-4 ring-gray-800" />
+          <div class="flex-col rounded-lg border border-white/10 bg-gray-900/50 p-4 shadow-md">
+            <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-bold uppercase text-yellow-300">
+                {el.title}
+              </h3>
+              <span class="text-sm font-semibold uppercase text-gray-400">
+                {el.from} - {el.to}
+              </span>
             </div>
-            <div class="w-[200px]">
-                <p class="text-sm text-white text-justify">{el.desc}</p>
-            </div>
-        </div>)}
-      </div>
+            <h4 class="mb-3 text-md font-semibold uppercase text-blue-400">
+              {el.business}
+            </h4>
+            <p class="text-sm text-gray-300">{el.desc}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </article>

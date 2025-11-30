@@ -1,25 +1,66 @@
-<article class="w-auto flex justify-center items-center flex-col mt-2 reveal" id="skills">
-    <h2 class="text-2xl font-extrabold text-white uppercase flex justify-center items-center gap-3">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-            <path fill-rule="evenodd" d="M12 6.75a5.25 5.25 0 0 1 6.775-5.025.75.75 0 0 1 .313 1.248l-3.32 3.319c.063.475.276.934.641 1.299.365.365.824.578 1.3.64l3.318-3.319a.75.75 0 0 1 1.248.313 5.25 5.25 0 0 1-5.472 6.756c-1.018-.086-1.87.1-2.309.634L7.344 21.3A3.298 3.298 0 1 1 2.7 16.657l8.684-7.151c.533-.44.72-1.291.634-2.309A5.342 5.342 0 0 1 12 6.75ZM4.117 19.125a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" clip-rule="evenodd" />
-            <path d="m10.076 8.64-2.201-2.2V4.874a.75.75 0 0 0-.364-.643l-3.75-2.25a.75.75 0 0 0-.916.113l-.75.75a.75.75 0 0 0-.113.916l2.25 3.75a.75.75 0 0 0 .643.364h1.564l2.062 2.062 1.575-1.297Z" />
-            <path fill-rule="evenodd" d="m12.556 17.329 4.183 4.182a3.375 3.375 0 0 0 4.773-4.773l-3.306-3.305a6.803 6.803 0 0 1-1.53.043c-.394-.034-.682-.006-.867.042a.589.589 0 0 0-.167.063l-3.086 3.748Zm3.414-1.36a.75.75 0 0 1 1.06 0l1.875 1.876a.75.75 0 1 1-1.06 1.06L15.97 17.03a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-          </svg>
-      <span>My Skills</span></h2>
-      <p class="text-sm text-white w-60 text-center p-2">I love the javascript ecosystem, that's why my skills are technologies of this powerful programming language. These are the main ones:</p>
-      <div class="grid grid-cols-4 place-items-center gap-2 mt-2 w-[300px] bg-slate-800 p-2 rounded-md">
-        <img src="https://www.logo.wine/a/logo/React_(web_framework)/React_(web_framework)-Logo.wine.svg" alt="react" class="w-[60px] h-[60px]">
-        <img src="https://velog.velcdn.com/images/iinhyechoii/post/4d3af618-f71f-41b3-92b6-3da1472998fb/image.png" alt="tailwind" class="w-[60px] h-[60px]">
-        <img src="https://cdn.worldvectorlogo.com/logos/astrojs.svg" alt="astro" class="w-[60px] h-[60px]">
-        <img src="https://img.icons8.com/fluent-systems-filled/200/FFFFFF/nextjs.png" alt="next" class="w-[60px] h-[60px]">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/NestJS.svg" alt="nest" class="w-[60px] h-[60px]">
-        <img src="https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png" alt="node" class="w-[45px] h-[50px]">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" alt="ts" class="w-[50px] h-[50px]">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png" alt="vite" class="w-[50px] h-[50px]">
-        <img src="https://static-00.iconduck.com/assets.00/git-icon-2048x2048-juzdf1l5.png" alt="git" class="w-[50px] h-[50px]">
-        <img src="https://www.rapidbrains.com/assets/img/services/rapidbrains-expressjs.webp" alt="express" class="w-[50px] h-[50px]">
-        <img src="https://reactrouter.com/_brand/React%20Router%20Brand%20Assets/React%20Router%20Logo/Light.png" alt="router-dom" class="w-[50px] h-[35px]">
-        <img src="https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png" alt="supabase" class="w-[40px] h-[50px]">
-        <img src="https://www.golden-team.org/static/services/vuejs.webp" alt="vue-js" class="w-[40px] h-[40px]">
-    </div>
+---
+const skills = [
+  { name: "React", category: "Frameworks" },
+  { name: "Next.js", category: "Frameworks" },
+  { name: "Astro", category: "Frameworks" },
+  { name: "NestJS", category: "Frameworks" },
+  { name: "Express", category: "Frameworks" },
+  { name: "Vue.js", category: "Frameworks" },
+  { name: "TypeScript", category: "Lenguajes" },
+  { name: "JavaScript", category: "Lenguajes" },
+  { name: "C#/.Net", category: "Lenguajes" },
+  { name: "Node.js", category: "Frameworks" },
+  { name: "Tailwind CSS", category: "Frameworks" },
+  { name: "Expo", category: "Frameworks" },
+  { name: "Vite", category: "Infraestructura y Otros" },
+  { name: "Git", category: "Infraestructura y Otros" },
+  { name: "Vercel", category: "Infraestructura y Otros" },
+  { name: "Railway", category: "Infraestructura y Otros" },
+  { name: "React Router", category: "Frameworks" },
+  { name: "Supabase", category: "Base de Datos" },
+  { name: "MySQL", category: "Base de Datos" },
+  { name: "PostgreSQL", category: "Base de Datos" },
+  { name: "SQL Server", category: "Base de Datos" },
+];
+
+const categories = {
+  Frameworks: skills.filter((s) => s.category === "Frameworks"),
+  Lenguajes: skills.filter((s) => s.category === "Lenguajes"),
+  "Base de Datos": skills.filter((s) => s.category === "Base de Datos"),
+  "Infraestructura y Otros": skills.filter(
+    (s) => s.category === "Infraestructura y Otros"
+  ),
+};
+---
+
+<article
+  class="reveal mx-auto w-[90%] sm:max-w-4xl rounded-xl border border-white/10 bg-gray-900/50 p-6 text-white backdrop-blur-sm md:p-8"
+  id="skills"
+>
+  <h2
+    class="mb-6 flex items-center justify-center gap-3 text-2xl font-extrabold uppercase text-white"
+  >
+    <span>My Skills</span>
+  </h2>
+  <p class="mb-8 text-center text-base text-gray-300">
+    I love the JavaScript ecosystem, which is why my skills are focused on
+    technologies within this powerful language. These are the main ones:
+  </p>
+
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+    {
+      Object.entries(categories).map(([category, skills]) => (
+        <div class="flex flex-col gap-4">
+          <h3 class="text-lg font-bold text-yellow-300">{category}</h3>
+          <div class="flex flex-wrap gap-2">
+            {skills.map((skill) => (
+              <span class="rounded-md bg-gray-700/50 px-3 py-1 text-sm font-medium text-gray-200">
+                {skill.name}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </article>

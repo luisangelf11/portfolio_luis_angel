@@ -1,50 +1,22 @@
 ---
 import Image from "astro/components/Image.astro";
-import Ecommerce from "../assets/ecommerce.png";
-import witc from "../assets/witc.png";
 import notas from "../assets/notas.png";
 import nest from "../assets/nest.jpg";
-import ipad from "../assets/ipad.png"
-import chat from '../assets/chat.jpg'
-import akademico from '../assets/akademico.jpg'
+import chat from "../assets/chat.jpg";
 
 const projects = [
-{
-    name: "Indice Akademico",
-    desc: "This app allows you to calculate the academic index obtained.",
-    urlImg: akademico,
-    skills: ["vue", "tailwind", "typescript", "vite"],
-    github: "https://github.com/luisangelf11/indice-akademico",
-    preview: "https://indice-akademico.vercel.app/",
-  },
   {
     name: "Dev Community",
     desc: "It's a chat application for developers like discord, where you can meet and talk to others developers of the community. This is a personal project.",
-    urlImg: chat,
+    images: [chat],
     skills: ["nest js", "tailwind", "typescript", "react", "sqlite"],
     github: "https://github.com/luisangelf11/dev-community",
     preview: "",
   },
   {
-    name: "Ecommerce app",
-    desc: "This app was developed as a university project together with two friends. It is an app that allows you to make purchases using PayPal as a payment gateway.",
-    urlImg: Ecommerce,
-    skills: ["react", "tailwind", "express", "mysql"],
-    github: "https://github.com/luisangelf11/glowish_pedidos_app",
-    preview: "",
-  },
-  {
-    name: "What is the country",
-    desc: "It is a quiz app to learn the flags of each country.",
-    urlImg: witc,
-    skills: ["react"],
-    github: "https://github.com/luisangelf11/what-is-the-country",
-    preview: "https://what-is-the-country.vercel.app/",
-  },
-  {
     name: "Notes App",
     desc: "This is a notes app developed at a live event for my YouTube subscribers. This app performs a basic CRUD",
-    urlImg: notas,
+    images: [notas],
     skills: ["react", "tailwind", "express", "prisma"],
     github: "https://github.com/luisangelf11/js-dev4ever",
     preview:
@@ -53,18 +25,10 @@ const projects = [
   {
     name: "Tasks Manager API",
     desc: "This is a Rest API developed with nest, it handles user authentication and allows performing all crud operations for the logged-in user.",
-    urlImg: nest,
+    images: [nest],
     skills: ["nest js", "prisma"],
     github: "https://github.com/luisangelf11/task-manager-api",
     preview: "",
-  },
-  {
-    name: "Glowish Catalog",
-    desc: "This is the glowish fashion catalogue, which I am currently working on as a freelance developer.",
-    urlImg: ipad,
-    skills: ["typescript", "react", "supabase", "shadcn", "tailwind"],
-    github: "",
-    preview: "https://glowish-fashion-sy.vercel.app/catalogo",
   },
 ];
 ---
@@ -73,84 +37,182 @@ const projects = [
   <h2
     class="text-2xl font-extrabold text-white uppercase flex justify-center items-center gap-3 reveal"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      class="size-6"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-        clip-rule="evenodd"></path>
-    </svg>
-
     <span>My Projects</span>
   </h2>
-  {
-    projects.map((el) => (
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 p-3 reveal">
-        <Image
-          src={el.urlImg}
-          alt={el.name}
-          class:list={
-            "w-[250px] object-cover h-[150px] rounded-lg transition-transform transform hover:scale-[.75]"
-          }
-        />
-        <div class="w-[300px] flex flex-col gap-3 justify-center items-start">
-          <h3 class="text-xl text-yellow-300 uppercase font-bold">{el.name}</h3>
-          <p class="text-xs text-white text-justify">{el.desc}</p>
-          <div class="flex gap-1">
-            {el.skills.map((el) => (
-              <span class="p-2 rounded-lg  text-xs text-blue-400 font-bold">
-                {el}
-              </span>
-            ))}
-          </div>
-          <div class="w-auto flex gap-2">
-            {el.github !== "" && (
-              <a
-                href={el.github}
-                class="flex justify-center items-center text-white gap-2 border rounded-lg p-2 text-xs transition-all hover:text-yellow-400 hover:border-blue-400 hover:bg-slate-800"
-              >
-                <svg
-                  viewBox="0 0 256 250"
-                  width="15"
-                  height="15"
-                  fill="#fff"
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="xMidYMid"
-                >
-                  <path d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z" />
-                </svg>{" "}
-                <span>Code</span>
-              </a>
-            )}
-            {el.preview !== "" && (
-              <a
-                href={el.preview}
-                class="flex justify-center items-center text-white gap-2 border rounded-lg p-2 text-xs transition-all hover:text-yellow-400 hover:border-blue-400 hover:bg-slate-800"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
-                >
-                  <path d="M15.75 8.25a.75.75 0 0 1 .75.75c0 1.12-.492 2.126-1.27 2.812a.75.75 0 1 1-.992-1.124A2.243 2.243 0 0 0 15 9a.75.75 0 0 1 .75-.75Z" />
-                  <path
-                    fill-rule="evenodd"
-                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM4.575 15.6a8.25 8.25 0 0 0 9.348 4.425 1.966 1.966 0 0 0-1.84-1.275.983.983 0 0 1-.97-.822l-.073-.437c-.094-.565.25-1.11.8-1.267l.99-.282c.427-.123.783-.418.982-.816l.036-.073a1.453 1.453 0 0 1 2.328-.377L16.5 15h.628a2.25 2.25 0 0 1 1.983 1.186 8.25 8.25 0 0 0-6.345-12.4c.044.262.18.503.389.676l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 0 1-1.161.886l-.143.048a1.107 1.107 0 0 0-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 0 1-1.652.928l-.679-.906a1.125 1.125 0 0 0-1.906.172L4.575 15.6Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-
-                <span>Preview</span>
-              </a>
-            )}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+    {
+      projects.map((project, index) => (
+        <div
+          class="project-card group relative w-[300px] h-[200px] rounded-lg overflow-hidden shadow-lg cursor-pointer reveal"
+          data-project-index={index}
+        >
+          <Image
+            src={project.images[0]}
+            alt={project.name}
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            width={300}
+            height={200}
+          />
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <h3 class="text-xl text-yellow-300 uppercase font-bold">
+              {project.name}
+            </h3>
+            <p class="text-xs text-white text-justify mt-2">{project.desc}</p>
           </div>
         </div>
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
 </article>
+
+<!-- Modal Structure -->
+<div
+  id="project-modal"
+  class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden items-center justify-center"
+>
+  <div
+    id="modal-content"
+    class="relative bg-slate-900 p-4 rounded-lg max-w-4xl w-11/12"
+  >
+    <button
+      id="close-modal"
+      class="absolute top-3 right-3 text-white hover:text-yellow-400 z-20"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-7"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Project Info -->
+    <div class="mt-4 text-white">
+      <h3 id="modal-title" class="text-2xl text-yellow-300 uppercase font-bold">
+      </h3>
+      <p id="modal-desc" class="text-sm mt-2"></p>
+      <div id="modal-skills" class="flex flex-wrap gap-2 mt-4"></div>
+      <div id="modal-links" class="flex gap-4 mt-4"></div>
+    </div>
+
+    <!-- Image Grid Container -->
+    <div id="image-grid" class="grid grid-cols-2 gap-2 mt-4">
+      <!-- Images and placeholders will be injected here by JS -->
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ projects }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const projectCards = document.querySelectorAll(".project-card");
+    const modal = document.getElementById("project-modal");
+    const closeModalBtn = document.getElementById("close-modal");
+    const imageGrid = document.getElementById("image-grid");
+
+    const modalTitle = document.getElementById("modal-title");
+    const modalDesc = document.getElementById("modal-desc");
+    const modalSkills = document.getElementById("modal-skills");
+    const modalLinks = document.getElementById("modal-links");
+
+    let currentProject = null;
+
+    const openModal = (projectIndex) => {
+      currentProject = projects[projectIndex];
+
+      // Populate Modal Info
+      modalTitle.textContent = currentProject.name;
+      modalDesc.textContent = currentProject.desc;
+
+      modalSkills.innerHTML = currentProject.skills
+        .map(
+          (skill) =>
+            `<span class="p-2 rounded-lg text-xs text-blue-400 font-bold bg-slate-800">${skill}</span>`
+        )
+        .join("");
+
+      modalLinks.innerHTML = `
+        ${
+          currentProject.github
+            ? `<a href="${currentProject.github}" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center text-white gap-2 border rounded-lg p-2 text-xs transition-all hover:text-yellow-400 hover:border-blue-400 hover:bg-slate-800">
+                <svg viewBox="0 0 256 250" width="15" height="15" fill="currentColor" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid"><path d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Z"/></svg>
+                <span>Code</span>
+              </a>`
+            : ""
+        }
+        ${
+          currentProject.preview
+            ? `<a href="${currentProject.preview}" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center text-white gap-2 border rounded-lg p-2 text-xs transition-all hover:text-yellow-400 hover:border-blue-400 hover:bg-slate-800">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5"><path d="M15.75 8.25a.75.75 0 0 1 .75.75c0 1.12-.492 2.126-1.27 2.812a.75.75 0 1 1-.992-1.124A2.243 2.243 0 0 0 15 9a.75.75 0 0 1 .75-.75Z" /><path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM4.575 15.6a8.25 8.25 0 0 0 9.348 4.425 1.966 1.966 0 0 0-1.84-1.275.983.983 0 0 1-.97-.822l-.073-.437c-.094-.565.25-1.11.8-1.267l.99-.282c.427-.123.783-.418.982-.816l.036-.073a1.453 1.453 0 0 1 2.328-.377L16.5 15h.628a2.25 2.25 0 0 1 1.983 1.186 8.25 8.25 0 0 0-6.345-12.4c.044.262.18.503.389.676l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 0 1-1.161.886l-.143.048a1.107 1.107 0 0 0-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 0 1-1.652.928l-.679-.906a1.125 1.125 0 0 0-1.906.172L4.575 15.6Z" clip-rule="evenodd" /></svg>
+                <span>Preview</span>
+              </a>`
+            : ""
+        }
+      `;
+
+      updateImageGrid();
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden"; // Prevent background scrolling
+    };
+
+    const closeModal = () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.style.overflow = "auto"; // Restore scrolling
+    };
+
+    const updateImageGrid = () => {
+      imageGrid.innerHTML = "";
+      const placeholderSvg = `
+        <div class="w-full h-full bg-slate-800 rounded-md flex items-center justify-center">
+          <svg class="w-12 h-12 text-slate-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          </svg>
+        </div>
+      `;
+
+      for (let i = 0; i < 4; i++) {
+        if (i < currentProject.images.length) {
+          const img = currentProject.images[i];
+          imageGrid.innerHTML += `<img src="${img.src}" alt="${currentProject.name} - Image ${i + 1}" class="w-full h-full object-cover rounded-md">`;
+        } else {
+          imageGrid.innerHTML += placeholderSvg;
+        }
+      }
+    };
+
+    projectCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const projectIndex = card.getAttribute("data-project-index");
+        openModal(parseInt(projectIndex, 10));
+      });
+    });
+
+    closeModalBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (modal.classList.contains("flex")) {
+        if (e.key === "Escape") closeModal();
+      }
+    });
+  });
+</script>
+
+<style>
+  #carousel-images > img {
+    flex-shrink: 0; /* This can be removed if not used elsewhere */
+  }
+</style>

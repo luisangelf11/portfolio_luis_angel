@@ -1,95 +1,62 @@
 ---
 import Image from "astro/components/Image.astro";
 import photo from "../assets/new-photo.png";
+import Icon from "./Icon.astro";
+import LinkButton from "./LinkButton.astro";
 
-const dateBirthday = new Date("2003-11-11T00:00:00")
-const today = new Date()
-
-const years = Math.floor((today.getTime() - dateBirthday.getTime()) / (1000 * 60 * 60 * 24 * 365))
+const birthDate = new Date("2003-11-11");
+const today = new Date();
+let age = today.getFullYear() - birthDate.getFullYear();
+const monthDifference = today.getMonth() - birthDate.getMonth();
+if (
+  monthDifference < 0 ||
+  (monthDifference === 0 && today.getDate() < birthDate.getDate())
+) {
+  age--;
+}
 
 ---
 
-<article class="flex flex-col gap-4 justify-center items-center reveal" id="about">
+<article
+  class="reveal mx-auto w-[90%] sm:max-w-4xl rounded-xl border border-white/10 bg-gray-900/50 p-6 text-white backdrop-blur-sm md:p-8"
+  id="about"
+>
   <h2
-    class="text-2xl font-extrabold p-2 text-white uppercase flex justify-center items-center gap-3"
+    class="mb-6 flex items-center justify-center gap-3 text-2xl font-extrabold uppercase text-white"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      class="size-6"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
-        clip-rule="evenodd"></path>
-    </svg>
     <span>About me</span>
   </h2>
-  <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-    <Image
-      src={photo}
-      alt={"Photo"}
-      class:list={"w-[150px] h-[150px] rounded-lg border-2 border-blue-300 object-cover rotate-12"}
-    />
-    <div class="flex flex-col w-[400px] justify-center items-center">
-      <p class="text-white p-2 text-sm text-justify w-[80%]">
-        My name is Luis Angel Fernandez, I am {years} years old, I am from the
+  <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-3">
+    <div class="flex justify-center md:col-span-1">
+      <Image
+        src={photo}
+        alt={"A photo of Luis Angel Fernandez"}
+        class:list={"aspect-square w-48 rounded-lg border-2 border-yellow-300/50 object-cover"}
+      />
+    </div>
+    <div class="flex flex-col justify-center md:col-span-2">
+      <p class="mb-6 text-base text-gray-300">
+        My name is Luis Angel Fernandez, I am {age} years old, I am from the
         Dominican Republic and I study computer science. I like programming and
         I discovered this world when I was 14 years old.
         <br />
-
-        I can speak the English language at a basic level, and my native
-        language is Spanish. I am a content creator on YouTube, my content is
-        programming.
+        <br />
+        I am a content creator on YouTube where I share my knowledge about programming. I can speak English at a conversational level and my native language is Spanish.
         <br />
         I like basketball, music and writing songs. If I wasn't a developer, I'd
         be a singer.
       </p>
-      <div class="flex justify-center items-center gap-4 mt-4">
-        <a
+      <div class="flex flex-wrap justify-center gap-4 md:justify-start">
+        <LinkButton
           href="mailto:luisangelf491@gmail.com?subject=Hello&body=Escribe aquí tu mensaje"
-          class="text-yellow-300 text-xs border border-blue-400 bg-gray-800 rounded-3xl p-2 flex justify-center items-center gap-2"
           title="luisangelf491@gmail.com"
+          icon="mail"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-5"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-            ></path>
-          </svg>
-
-          <span>Contact me</span>
-        </a>
-        <a
-          href="/CV.pdf"
-          target="_blank"
-          class="text-yellow-300 flex justify-center items-center gap-2 bg-gray-800 border border-blue-400 rounded-3xl p-2 text-xs"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-5"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
-            ></path>
-          </svg>
-          <span>Download CV</span></a
-        >
+          Contact me
+        </LinkButton>
+        <LinkButton href="/CV.pdf" target="_blank" icon="download">
+          Download CV
+        </LinkButton>
       </div>
     </div>
   </div>
