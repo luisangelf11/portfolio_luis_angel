@@ -6,29 +6,29 @@ const skills = [
   { name: "NestJS", category: "Frameworks" },
   { name: "Express", category: "Frameworks" },
   { name: "Vue.js", category: "Frameworks" },
-  { name: "TypeScript", category: "Lenguajes" },
-  { name: "JavaScript", category: "Lenguajes" },
-  { name: "C#/.Net", category: "Lenguajes" },
+  { name: "TypeScript", category: "Languages" },
+  { name: "JavaScript", category: "Languages" },
+  { name: "C#/.Net", category: "Languages" },
   { name: "Node.js", category: "Frameworks" },
   { name: "Tailwind CSS", category: "Frameworks" },
   { name: "Expo", category: "Frameworks" },
-  { name: "Vite", category: "Infraestructura y Otros" },
-  { name: "Git", category: "Infraestructura y Otros" },
-  { name: "Vercel", category: "Infraestructura y Otros" },
-  { name: "Railway", category: "Infraestructura y Otros" },
+  { name: "Vite", category: "Infrastructure and others" },
+  { name: "Git", category: "Infrastructure and others" },
+  { name: "Vercel", category: "Infrastructure and others" },
+  { name: "Railway", category: "Infrastructure and others" },
   { name: "React Router", category: "Frameworks" },
-  { name: "Supabase", category: "Base de Datos" },
-  { name: "MySQL", category: "Base de Datos" },
-  { name: "PostgreSQL", category: "Base de Datos" },
-  { name: "SQL Server", category: "Base de Datos" },
+  { name: "Supabase", category: "Data Bases" },
+  { name: "MySQL", category: "Data Bases" },
+  { name: "PostgreSQL", category: "Data Bases" },
+  { name: "SQL Server", category: "Data Bases" },
 ];
 
 const categories = {
   Frameworks: skills.filter((s) => s.category === "Frameworks"),
-  Lenguajes: skills.filter((s) => s.category === "Lenguajes"),
-  "Base de Datos": skills.filter((s) => s.category === "Base de Datos"),
-  "Infraestructura y Otros": skills.filter(
-    (s) => s.category === "Infraestructura y Otros"
+  Languages: skills.filter((s) => s.category === "Languages"),
+  "Data Bases": skills.filter((s) => s.category === "Data Bases"),
+  "Infrastructure and others": skills.filter(
+    (s) => s.category === "Infrastructure and others"
   ),
 };
 ---
