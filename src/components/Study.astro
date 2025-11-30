@@ -1,0 +1,63 @@
+---
+const studies = [
+  {
+    grade: "Licenciatura en Informática",
+    school: "UTECO (Universidad Tecnologíca del Cibao Oriental)",
+    isFinished: false,
+    caption:
+      "Currently studying, specializing in software development, databases and networks.",
+  },
+  {
+    grade: "Técnico Superior en Informática",
+    school: "UTECO (Universidad Tecnologíca del Cibao Oriental)",
+    isFinished: true,
+    caption: "Grado completado con enfoque en programación y soporte técnico.",
+  },
+  {
+    grade: "Técnico en mantenimiento de sistemas informaticos",
+    school: "Politécnico Padre Fantino",
+    isFinished: true,
+    caption: "Initial technical training that laid the foundation for my IT career, completed in high school.",
+  },
+];
+---
+
+<section id="studies" class="flex flex-col gap-8 justify-center items-center py-10 w-full">
+  <h2
+    class="text-2xl font-extrabold text-white uppercase flex justify-center items-center gap-3 reveal"
+  >
+
+    <span>Educación</span>
+  </h2>
+
+  <div class="relative mt-5 px-4">
+    <!-- Timeline Line -->
+    <div
+      class="absolute left-1/2 h-full w-0.5 bg-slate-700 -translate-x-1/2"
+    >
+    </div>
+
+    <!-- Timeline Items -->
+    {
+      studies.map((study, index) => (
+        <div class="relative mb-10 reveal">
+          <div class="flex items-center">
+            <div class={`w-full p-4 rounded-lg shadow-md bg-slate-800 border border-slate-700 ${index % 2 === 0 ? 'ml-auto text-left' : 'mr-auto text-right'} max-w-sm`}>
+              <h3 class="text-lg font-bold text-yellow-300">{study.grade}</h3>
+              <p class="text-sm font-semibold text-white mt-1">{study.school}</p>
+              <p class="text-xs text-slate-400 mt-2">{study.caption}</p>
+              <div class={`inline-flex items-center gap-2 px-2 py-1 text-xs font-medium rounded-md mt-3 ${study.isFinished ? 'bg-green-900 text-green-300' : 'bg-blue-900 text-blue-300'}`}>
+                {study.isFinished ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"></path></svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-13a.75.75 0 0 0-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 0 0 0-1.5h-3.25V5Z" clip-rule="evenodd"></path></svg>
+                )}
+                <span>{study.isFinished ? "Finalizado" : "En curso"}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
